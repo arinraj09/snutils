@@ -1,0 +1,21 @@
+(function() {
+    var url = decodeURIComponent(window.location.href);
+    var match = url.match(/sys_id[=%3D]+([a-f0-9]{32})/i);
+    
+    if (!match) {
+        alert('Could not extract sys_id. Are you on an Incident record?');
+        return;
+    }
+
+    var sysid = match[1];
+    var table = 'incident';
+
+    var emailUrl = '/email_client.do?sysparm_table=' + table +
+                   '&sysparm_sys_id=' + sysid +
+                   '&sysparm_target=' + table +
+                   '&sys_target=' + table +
+                   '&sys_uniqueValue=' + sysid +
+                   '&sys_row=0&sysparm_encoded_record=&sysparm_domain_restore=false&sysparm_stack=no';
+
+    window.open(emailUrl, '_blank', 'width=900,height=700');
+})();
