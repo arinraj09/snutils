@@ -1,0 +1,14 @@
+(function() {
+    // Get the caller's name dynamically
+    var callerName = g_form.getDisplayValue('caller_id');
+
+    // Set State to "On Hold" (value = 3)
+    g_form.setValue('state', '3');
+
+    // Set On Hold Reason to "Awaiting Caller" (value = 1)
+    g_form.setValue('hold_reason', '1');
+
+    // Set Additional Comments with dynamic caller name
+    var message = 'Hello ' + callerName + ',\nGreetings!\n\n\nRegards,\nServiceNow ServiceDesk';
+    g_form.setValue('comments', message);
+})();
