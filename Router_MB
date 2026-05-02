@@ -1,0 +1,5 @@
+(function executeRule(current, previous /*null when async*/) {
+
+		current.work_notes = 'Hello Team,\nThe ticket was routed to Global_L1_Support(Activity logs may not get captured for the assignment to Global_L1_Support), and as per the automated routing logic, it is being routed to you.\nIf you are not responsible to for this issue, please route it to the relevant team.\nWith Regards,\nGlobal_L1_Support Team';
+
+})(current, previous);
